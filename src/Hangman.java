@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Hangman {
 
     public static void main(String[] args){
@@ -9,9 +11,24 @@ public class Hangman {
     System.out.println("Good luck!");
 
     int numberOfMisses=0;
-    for( int i=0; i<15; i++){
-        hangManImage(i);}
+    for( int i=0; i<15; i++) {
+        hangManImage(i);
+        {
+
+            int tries = 0;
+            boolean iterated = false;
+            String temp = "";
+            String holder = "";
+            int length;
+            String SecretWord;
+            Scanner keyboard = new Scanner(System.in);
+            System.out.println("Guess a word");
+            SecretWord = keyboard.nextLine();
+
+        }
     }
+    }
+
 public static void hangManImage(int tries){
         String display="";
         switch(tries){
@@ -50,7 +67,7 @@ public static void hangManImage(int tries){
             case 2:
                 System.out.println("    |---------------------------------|");
                 System.out.println("    |                                 |");
-                System.out.println("    |                               -- --");
+                System.out.println("    |                               $ $");
                 System.out.println("    |");
                 System.out.println("    |");
                 System.out.println("    |");
@@ -181,6 +198,22 @@ public static void hangManImage(int tries){
                 System.out.println("----|-------------------------------------------");
                 System.out.println("");
                 break;
+
+            case 11:
+                System.out.println("    |---------------------------------|");
+                System.out.println("    |                                 |");
+                System.out.println("    |                               ( $ $ )");
+                System.out.println("    |                                  |");
+                System.out.println("    |                              |---|");
+                System.out.println("    |                              |   | ");
+                System.out.println("    |                              |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("    |");
+                System.out.println("----|-------------------------------------------");
+                System.out.println("");
+                break;
+
 
         }
 
