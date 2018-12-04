@@ -3,13 +3,17 @@ import java.util.Scanner;
 public class Hangman {
 
     public static void main(String[] args) {
-
+    String name;
         System.out.println("Welcome to Hangman!");
         System.out.println("Rules of the game: Guess a letter for the amount of spaces given. ");
         System.out.println("For every letter you get wrong, a part of the hangman will appear.");
         System.out.println("Once the whole hangman appears you lose the game.");
         System.out.println("Good luck!");
 
+
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Enter Secret Word!!!");
+        name = keyboard. nextLine();
         int numberOfMisses = 0;
         for (int i = 0; i < 15; i++) {
             hangManImage(i);
