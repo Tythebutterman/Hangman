@@ -19,7 +19,7 @@ public class Hangman {
             hangManImage(i);
             {
 
-
+                String secretword;
                 int tries = 0;
                 boolean iterated = false;
                 String temp = "";
