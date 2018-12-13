@@ -9,23 +9,48 @@ public class Hangman {
         System.out.println("For every letter you get wrong, a part of the hangman will appear.");
         System.out.println("Once the whole hangman appears you lose the game.");
         System.out.println("Good luck!");
+        }
 
+        private static String[] words = {"ohio", "basketball", "football"};
+        private static String word = words[(int) (Math.random() * words.length)];
+        private static String asterisk = new String(new char[word.length()]).replace("\0", "*");
+        private static int count = 0;
 
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("Enter Secret Word!!!");
-        name = keyboard. nextLine();
-        int numberOfMisses = 0;
-        for (int i = 0; i < 15; i++) {
-            hangManImage(i);
-            {
+         {
+            Scanner sc = new Scanner(System.in);
 
-                String secretword;
-                int tries = 0;
-                boolean iterated = false;
-                String temp = "";
+            while (count < 7 && asterisk.contains("*")) {
+                System.out.println("Guess any letter in the word");
+                System.out.println(asterisk);
+                String guess = sc.next();
+                hang(guess);
+            }
+            sc.close();
+        }
+
+        public static void hang(String guess) {
+            String newasterisk = "";
+            for (int i = 0; i < word.length(); i++) {
+                if (word.charAt(i) == guess.charAt(0)) {
+                    newasterisk += guess.charAt(0);
+                } else if (asterisk.charAt(i) != '*') {
+                    newasterisk += word.charAt(i);
+                } else {
+                    newasterisk += "*";
+                }
+            }
+
+            if (asterisk.equals(newasterisk)) {
+                count++;
+                hangManImage(15);
+            } else {
+                asterisk = newasterisk;
+            }
+            if (asterisk.equals(word)) {
+                System.out.println("Correct! You win! The word was " + word);
             }
         }
-    }
+
 
 
 public static void hangManImage(int tries){
